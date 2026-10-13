@@ -1,0 +1,6 @@
+test,p_raw,p_holm
+"H1 Mantel (distance-matrix agreement), 2022",0.0004997501249375312,0.001999000499750125
+"H1 Procrustes (2-PC configuration), 2022",0.0004997501249375312,0.001999000499750125
+"H2 ARI vs chance (A4 vs B5), permutation",0.001996007984031936,0.001999000499750125
+"H4 cluster stability B vs A, paired Wilcoxon",0.0006395631729325215,0.001999000499750125
+"H4 rank stability B vs A, paired Wilcoxon",2.890556660640974e-26,1.445278330320487e-25

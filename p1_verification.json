@@ -1,0 +1,24 @@
+{
+ "rows": 19494,
+ "cols": 130,
+ "entities": 260,
+ "year_min": 1700,
+ "year_max": 2025,
+ "numeric_cols_excl_year": 127,
+ "dup_rows": 0,
+ "dup_keys": 0,
+ "n_noiso_entities": 40,
+ "n_iso_entities": 220,
+ "panel_rows_2000_2022": 5028,
+ "panel_countries": 220,
+ "identity_checks": {
+  "lnEI_minus(lnEpc-lnGDPpc)_maxabs": 1.862842118338648e-07,
+  "lnEI_minus(lnEpc-lnGDPpc)_median_abs": 2.9994997818860725e-08,
+  "fossil+lowcarbon_mean": 99.99999999391214,
+  "fossil+lowcarbon_sd": 3.814380922485037e-06,
+  "fossil_vs_coal+gas+oil_maxabs": 1.609999999541145e-05,
+  "renew_vs_components_maxabs": 1.350000000854834e-05,
+  "source_share_sum_mean": 99.99999998906256,
+  "source_share_sum_sd": 3.5826782423175773e-06
+ }
+}

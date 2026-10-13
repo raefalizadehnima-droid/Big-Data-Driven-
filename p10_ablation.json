@@ -1,0 +1,40 @@
+{
+ "n_rows_unscreened": 926,
+ "n_rows_common": 939,
+ "table": [
+  {
+   "label": "B screened (12)",
+   "n_features": 12,
+   "npc": 4,
+   "eff_dim": 7.262252739454891,
+   "silhouette": 0.326285889255445,
+   "stab_mean": 0.9284281537389197,
+   "stab_sd": 0.025617764489222195
+  },
+  {
+   "label": "Unscreened pool (16)",
+   "n_features": 16,
+   "npc": 5,
+   "eff_dim": 6.379919457086182,
+   "silhouette": 0.27587246805810905,
+   "stab_mean": 0.9162118105945941,
+   "stab_sd": 0.039574668621790605
+  },
+  {
+   "label": "A conventional (3), k=4",
+   "n_features": 3,
+   "npc": 2,
+   "eff_dim": 1.8521264688748813,
+   "silhouette": 0.4195396924860817,
+   "stab_mean": 0.9472897919729235,
+   "stab_sd": 0.05620139332357008
+  }
+ ],
+ "ARI_screened_vs_unscreened_k5": 0.679088677318544,
+ "ARI_unscreened_vs_A": 0.2609809221692429,
+ "ARI_screened_vs_A": 0.1911583310030527,
+ "dist_rho_screened_vs_unscreened_2022": 0.9339927113288666,
+ "dist_rho_unscreened_vs_A_2022": 0.6557585647088854,
+ "dist_rho_screened_vs_A_2022": 0.44412366765530203,
+ "n_2022": 158
+}
