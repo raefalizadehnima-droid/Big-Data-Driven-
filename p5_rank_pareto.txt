@@ -1,0 +1,108 @@
+{
+ "n_countries_2022_common": 159,
+ "n_2022_common_before_objective_filter": 161,
+ "rank_main": {
+  "spearman": 0.7003463100071652,
+  "kendall": 0.5247193694769525,
+  "pair_reversal": 0.23764031526152374,
+  "mean_abs_disp": 26.150943396226417,
+  "median_abs_disp": 20.0,
+  "p90_disp": 61.20000000000002,
+  "max_disp": 116,
+  "share_disp_ge10pct": 0.5471698113207547,
+  "share_disp_ge25pct": 0.23270440251572327,
+  "top10_overlap": 4,
+  "top20_overlap": 9,
+  "quintile_change_share": 0.5408805031446541,
+  "quintile_change_ge2": 0.16981132075471697
+ },
+ "rank_main_ci": {
+  "spearman": [
+   0.5925543467007538,
+   0.786678979244492
+  ],
+  "kendall": [
+   0.43431063655747676,
+   0.5959681705949765
+  ]
+ }
+}
+                 norm  cross_tau  cross_rho  A_vs_base_rho  B_vs_base_rho  top10_overlap
+0              minmax      0.525      0.700          1.000          1.000              4
+1                   z      0.472      0.646          0.984          0.994              5
+2                rank      0.447      0.633          0.926          0.922              1
+3                 raw      0.413      0.568          0.974          0.974              2
+4  minmax_winsor0-100      0.413      0.568          0.974          0.974              2
+5   minmax_winsor1-99      0.474      0.649          0.985          0.991              3
+6   minmax_winsor5-95      0.479      0.670          0.971          0.993              3
+7   copeland_pairwise      0.448      0.634          0.926          0.922              1
+{'cross_tau_mean': 0.37834232943237006, 'cross_tau_ci': [-0.03519624233739351, 0.7557797946023403], 'A_within_tau_mean': 0.6756233580128972, 'A_within_tau_ci': [0.26802404267176183, 0.9286840219727728], 'B_within_tau_mean': 0.6719152137568665, 'B_within_tau_ci': [0.4791656715229679, 0.8780869357535226], 'share_withinA_ge_crossbase': 0.7885, 'share_withinB_ge_crossbase': 0.9255, 'A_rank_interval_width_mean': 69.22767295597484, 'B_rank_interval_width_mean': 67.56572327044026, 'A_top10_stable': 1, 'B_top10_stable': 1, 'A_top20_freq_ge50': 18, 'B_top20_freq_ge50': 14}
+{
+ "nA": 19,
+ "nB": 23,
+ "nB5": 60,
+ "both": 11,
+ "onlyA": 8,
+ "onlyB": 12,
+ "jaccard": 0.3548387096774194,
+ "both_B5": 19,
+ "jaccard_B5": 0.31666666666666665,
+ "n_fronts_A": 9,
+ "n_fronts_B": 8,
+ "null_A_mean": 14.996666666666666,
+ "null_A_ci": [
+  6.4750000000000005,
+  24.0
+ ],
+ "null_B_mean": 22.98,
+ "null_B_ci": [
+  12.0,
+  37.0
+ ],
+ "B_3obj_subsets": [
+  {
+   "objs": [
+    "carbon_int",
+    "elec_div",
+    "import_exp"
+   ],
+   "n_eff": 13,
+   "overlap_with_A": 5
+  },
+  {
+   "objs": [
+    "carbon_int",
+    "elec_div",
+    "total_energy_per_capita_kwh"
+   ],
+   "n_eff": 20,
+   "overlap_with_A": 10
+  },
+  {
+   "objs": [
+    "carbon_int",
+    "import_exp",
+    "total_energy_per_capita_kwh"
+   ],
+   "n_eff": 6,
+   "overlap_with_A": 4
+  },
+  {
+   "objs": [
+    "elec_div",
+    "import_exp",
+    "total_energy_per_capita_kwh"
+   ],
+   "n_eff": 10,
+   "overlap_with_A": 6
+  }
+ ],
+ "robust_eff_A_ge90": 4,
+ "robust_eff_B_ge90": 7,
+ "robust_both_ge90": 2,
+ "robust_eff_A_among_efficient": 0.21052631578947367,
+ "robust_eff_B_among_efficient": 0.30434782608695654,
+ "mean_freq_eff_members_A": 0.5265263157894737,
+ "mean_freq_eff_members_B": 0.7109565217391305
+}
+{'n_B_eval': 201, 'n_A_eval': 165, 'n_B_only': 42, 'n_A_only': 6, 'top20_B_full_not_evaluable_A': 1, 'eff_B_full': 24, 'eff_B_full_not_evaluable_A': 1, 'B_only_countries_pop_M': 102.072875, 'A_eval_pop_M': 7912.784821, 'total_pop_M_B': 7920.47337}

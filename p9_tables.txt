@@ -1,0 +1,231 @@
+===== T1
+| Item | Value |
+|---|---|
+| Rows × columns in file | 19,494 × 130 |
+| Entities (all) / with ISO code / without | 260 / 220 / 40 |
+| Year range in file | 1700–2025 |
+| Duplicate rows / duplicate country–year keys | 0 / 0 |
+| Analytical panel: ISO entities, 2000–2022 | 5,028 country-years, 220 countries |
+| Complete country-years on A / B / both (6 snapshot years) | 986 / 1189 / 939 |
+| Countries evaluable in 2022 on A / B | 165 / 203 |
+| Countries evaluable in 2022 on A + primary fossil share | 74 |
+| Common sample (A ∩ B), country-years / countries | 939 / 161 |
+
+===== T2
+| Rep. | Feature | OWID source column | Transformation / unit | Coverage 2000–2022 (%) |
+|---|---|---|---|---|
+| A | ln GDP per capita | gdp / population | ln(int.-$ per person) | 75.4 |
+| A | ln energy per capita | total_energy_per_capita_kwh | ln(kWh per person) | 96.7 |
+| A | Fossil share of electricity | fossil_fuels_electricity_share_pct | % | 96.8 |
+| B | Carbon intensity of electricity | electricity_carbon_intensity_gco2eq_per_kwh | gCO₂e/kWh | 96.8 |
+| B | Oil share of electricity | oil_electricity_share_pct | √(share) | 96.8 |
+| B | ln energy per capita | total_energy_per_capita_kwh | ln(kWh per person) | 96.7 |
+| B | ln(1+oil production per capita) | oil_production_per_capita_kwh | ln(kWh pc) | 99.2 |
+| B | Gas share of electricity | gas_electricity_share_pct | √(share) | 93.4 |
+| B | Wind share of electricity | wind_electricity_share_pct | √(share) | 92.8 |
+| B | Bioenergy share of electricity | bioenergy_electricity_share_pct | √(share) | 96.0 |
+| B | Solar share of electricity | solar_electricity_share_pct | √(share) | 96.4 |
+| B | Coal share of electricity | coal_electricity_share_pct | √(share) | 95.2 |
+| B | ln(1+coal production per capita) | coal_production_per_capita_kwh | ln(kWh pc) | 99.2 |
+| B | Nuclear share of electricity | nuclear_electricity_share_pct | √(share) | 93.8 |
+| B | Net imports, share of demand | electricity_net_imports_share_of_demand_pct | signed √(share), clipped ±100% | 96.8 |
+
+===== T3
+| Relation | Statistic (2000–2022 panel) | Consequence |
+|---|---|---|
+| ln(energy per GDP) = ln(energy pc) − ln(GDP pc) | max |diff| = 1.9e-07 | Exact identity: energy intensity not an independent feature |
+| Fossil share + low-carbon share = 100 | mean 100.00, SD 3.8e-06 | Exact closure |
+| Fossil share = coal + gas + oil shares | max |diff| = 1.6e-05 | Exact identity; aggregate removed from B, sources retained |
+| Renewables share = hydro+wind+solar+bio+other | max |diff| = 1.4e-05 | Exact identity |
+| Nine source shares sum to 100 | mean 100.00, SD 3.6e-06 | Compositional closure; hydro recoverable by difference |
+| ln energy pc ~ ln electricity demand pc | ρ = 0.95 | One cluster; electricity-only variable dropped |
+| ln GDP pc ~ ln energy pc | ρ = 0.94 | Same cluster; GDP pc retained in A, dropped from B |
+| Carbon intensity ~ hydro share | ρ = −0.81 | One cluster; hydro dropped, carbon intensity retained |
+| Oil production pc ~ gas production pc | ρ = 0.86 | One cluster; gas production dropped |
+
+===== T4
+| Rep. | Features | PCs retained (parallel analysis) | Explained variance per PC (%) | Cumulative (%) | Effective dimension (participation ratio) |
+|---|---|---|---|---|---|
+| A | 3 | 2 | 66.6 / 31.5 | 98.1 | 1.84 |
+| B | 12 | 4 | 23.9 / 17.9 / 12.9 / 11.7 | 66.5 | 7.26 |
+
+===== T5
+| Rep. | k | Silhouette | Calinski–Harabasz | Davies–Bouldin | Subsample ARI, mean (SD) |
+|---|---|---|---|---|---|
+| A | 2 | 0.439 | 913 | 0.931 | 0.973 (0.026) |
+| A | 3 | 0.412 | 862 | 0.869 | 0.937 (0.140) |
+| A | 4 | 0.419 | 961 | 0.846 | 0.946 (0.054) |
+| A | 5 | 0.4 | 984 | 0.794 | 0.839 (0.123) |
+| A | 6 | 0.423 | 1087 | 0.763 | 0.947 (0.033) |
+| A | 8 | 0.417 | 1114 | 0.751 | 0.880 (0.065) |
+| B | 2 | 0.253 | 330 | 1.526 | 0.902 (0.130) |
+| B | 3 | 0.275 | 349 | 1.292 | 0.816 (0.174) |
+| B | 4 | 0.314 | 393 | 1.096 | 0.922 (0.032) |
+| B | 5 | 0.329 | 422 | 1.04 | 0.926 (0.027) |
+| B | 6 | 0.314 | 392 | 1.152 | 0.878 (0.072) |
+| B | 8 | 0.297 | 356 | 1.225 | 0.740 (0.115) |
+
+===== T6
+| Comparison | ARI [95% CI] | AMI [95% CI] | Variation of information (nats) | Permutation p |
+|---|---|---|---|---|
+| A (k=4) vs B (k=5) | 0.187 [0.147, 0.257] | 0.264 [0.231, 0.332] | 2.15 | 0.002 |
+| k=4 both | 0.126 [0.085, 0.191] | 0.171 [0.134, 0.235] | 2.22 | 0.002 |
+| k=5 both | 0.188 [0.152, 0.264] | 0.261 [0.225, 0.331] | 2.35 | 0.002 |
+| k=6 both | 0.204 [0.169, 0.273] | 0.297 [0.267, 0.358] | 2.47 | 0.002 |
+| A (k=4) vs B (k=5), 2022 only (n=161) | 0.159 | 0.216 | 2.20 | — |
+
+===== T7
+| Statistic (n = 159, 2022, equal weights) | A (3 obj.) vs B (4 obj.) | A vs B5 (5 obj.) |
+|---|---|---|
+| Spearman ρ [95% CI] | 0.700 [0.593, 0.787] | 0.781 |
+| Kendall τ [95% CI] | 0.525 [0.434, 0.596] | 0.606 |
+| Share of country pairs in reversed order | 0.238 | 0.197 |
+| Mean / median |rank displacement| | 26.2 / 20 | 22.1 / 17 |
+| 90th percentile / maximum displacement | 61 / 116 | 48 / 110 |
+| Countries displaced ≥10% of list length | 54.7% | 54.1% |
+| Countries displaced ≥25% of list length | 23.3% | 16.4% |
+| Top-10 / top-20 overlap (count) | 4 / 9 | 6 / 10 |
+| Changed quintile / moved ≥2 quintiles | 54.1% / 17.0% | 49.7% / 8.8% |
+
+===== T8a
+| Set | Countries |
+|---|---|
+| Efficient in both (n=11) | Australia, Belgium, Canada, Costa Rica, Ethiopia, Iceland, Kuwait, Luxembourg, Nepal, Switzerland, United States |
+| Efficient only under A (n=8) | Cameroon, Ireland, Norway, Oman, Qatar, Rwanda, Tanzania, Uganda |
+| Efficient only under B (n=12) | Central African Republic, Chile, Finland, Germany, Kenya, Lesotho, Netherlands, New Zealand, South Korea, Spain, Sweden, Uruguay |
+
+===== T8b
+| Statistic | Value |
+|---|---|
+| Pareto-efficient countries, A (3 obj.) / B (4 obj.) / B5 (5 obj.) | 19 / 23 / 60 |
+| Expected under independent objectives (mean [95% interval]), A / B | 15.0 [6, 24] / 23.0 [12, 37] |
+| Efficient in both A and B; A only; B only | 11; 8; 12 |
+| Jaccard overlap A–B / A–B5 | 0.355 / 0.317 |
+| Number of non-dominated fronts, A / B | 9 / 8 |
+| Efficient in ≥90% of 500 noisy draws, A / B / both | 4 / 7 / 2 |
+| Mean selection frequency of efficient members, A / B | 0.53 / 0.71 |
+
+===== T8c
+| B objectives (3-subset) | Efficient countries | Overlap with A-efficient set |
+|---|---|---|
+| carbon_int, elec_div, import_exp | 13 | 5 |
+| carbon_int, elec_div, total_energy_per_capita_kwh | 20 | 10 |
+| carbon_int, import_exp, total_energy_per_capita_kwh | 6 | 4 |
+| elec_div, import_exp, total_energy_per_capita_kwh | 10 | 6 |
+
+===== robust_list
+Belgium (A 0.31, B 0.95), Canada (A 0.92, B 0.99), Finland (A 0.34, B 0.96), Iceland (A 1.00, B 1.00), Norway (A 0.96, B 0.66), Qatar (A 1.00, B 0.48), Spain (A 0.05, B 0.97), Sweden (A 0.64, B 0.92), United States (A 0.69, B 0.99)
+===== T9
+| Check | Representation A | Representation B |
+|---|---|---|
+| Cluster: 80% country subsample (100 draws), mean ARI [95% range] | 0.943 [0.822, 0.988] | 0.927 [0.863, 0.974] |
+| Cluster: leave-one-variable-out, mean (min) ARI | 0.674 (0.308, drop fossil_sh) | 0.788 (0.567, drop oil_sh) |
+| Cluster: rank-based normalisation, ARI | 0.427 | 0.605 |
+| Cluster: no winsorisation, ARI | 1.000 | 0.975 |
+| Cluster: winsorise 5–95, ARI | 0.962 | 0.938 |
+| Cluster: drop top 2.5% outliers, ARI | 0.874 | 0.932 |
+| Cluster: kNN imputation (k=5), ARI on common rows | 0.991 (n set 986, 0 imputed) | 0.836 (n set 1247, 58 imputed) |
+| Cluster: out-of-time (train ≤2010, test ≥2015), ARI vs pooled labels | 0.968 (in-sample 0.920) | 0.277 (in-sample 0.872) |
+| Ranking: 80% country subsample (300 draws), mean Spearman ρ [95% range] | 0.9960 [0.9740, 0.9998] | 0.9985 [0.9935, 0.9999] |
+| Ranking: top-10 members retained in subsample (of 10), mean | 9.18 | 9.82 |
+| Ranking: τ vs baseline under 2000 Dirichlet weight draws, mean [95% range] | 0.676 [0.268, 0.929] | 0.672 [0.479, 0.878] |
+| Ranking: mean width of 5–95% rank interval under random weights (positions) | 69.2 | 67.6 |
+| Ranking: draws with within-representation τ ≥ cross-representation baseline τ | 78.8% | 92.5% |
+
+===== T10
+| Representation | 5-year transitions | Persistence [95% CI] | ARI between t and t+5 [95% CI] | Changed state 2000→2022 |
+|---|---|---|---|---|
+| A (k=4) | 617 | 0.916 [0.891, 0.938] | 0.802 [0.751, 0.853] | 26.5% (n=147) |
+| B (k=5) | 617 | 0.870 [0.842, 0.898] | 0.717 [0.658, 0.784] | 35.4% (n=147) |
+| A (k=5) | 617 | 0.885 [0.856, 0.913] | 0.739 [0.686, 0.804] | 31.3% (n=147) |
+| B (k=4) | 617 | 0.877 [0.847, 0.905] | 0.715 [0.649, 0.785] | 35.4% (n=147) |
+| A (k=6) | 617 | 0.874 [0.843, 0.902] | 0.727 [0.666, 0.789] | 29.9% (n=147) |
+| B (k=6) | 617 | 0.856 [0.822, 0.886] | 0.697 [0.634, 0.768] | 38.8% (n=147) |
+
+===== T11
+| Cluster | Country-years | Countries | GDP pc | Energy pc (kWh) | Fossil el. share (%) | Carbon int. | Renewables el. share (%) | Diversity | Net imports (%) |
+|---|---|---|---|---|---|---|---|---|---|
+| A0 | 215 | 52 | 2959.0 | 2837.7 | 81.8 | 584.2 | 18.2 | 0.3 | 0.0 |
+| A1 | 359 | 73 | 18921.1 | 28279.2 | 90.2 | 627.9 | 7.4 | 0.3 | 0.0 |
+| A2 | 223 | 49 | 18585.7 | 21686.7 | 25.2 | 184.4 | 63.6 | 0.5 | 0.1 |
+| A3 | 142 | 35 | 1654.1 | 956.0 | 10.8 | 100.8 | 89.2 | 0.2 | 0.0 |
+| B0 | 207 | 51 | 15952.4 | 26382.6 | 68.8 | 544.8 | 16.6 | 0.5 | 0.0 |
+| B1 | 182 | 43 | 3707.0 | 3009.1 | 5.4 | 59.0 | 93.1 | 0.2 | 0.0 |
+| B2 | 146 | 53 | 27783.3 | 26785.6 | 42.8 | 290.2 | 40.9 | 0.6 | 3.2 |
+| B3 | 200 | 45 | 12213.5 | 17739.5 | 94.1 | 631.0 | 4.9 | 0.3 | 0.0 |
+| B4 | 204 | 48 | 2263.3 | 2214.0 | 91.1 | 600.7 | 8.9 | 0.2 | 0.0 |
+
+===== cov
+{
+"n_B_eval": 201,
+"n_A_eval": 165,
+"n_B_only": 42,
+"n_A_only": 6,
+"top20_B_full_not_evaluable_A": 1,
+"eff_B_full": 24,
+"eff_B_full_not_evaluable_A": 1,
+"B_only_countries_pop_M": 102.072875,
+"A_eval_pop_M": 7912.784821,
+"total_pop_M_B": 7920.47337
+}
+===== eta
+| indicator | A | B |
+|---|---|---|
+| carbon_int | 0.701 | 0.552 |
+| elec_div | 0.143 | 0.456 |
+| import_exp | 0.023 | 0.08 |
+| energy_int | 0.139 | 0.142 |
+| renew_sh | 0.697 | 0.549 |
+| fossil_sh | 0.785 | 0.593 |
+| ln_gdp_pc | 0.715 | 0.355 |
+| ln_energy_pc | 0.713 | 0.355 |
+
+===== movers
+| country | rankA | rankB |
+|---|---|---|
+| Namibia | 24.0 | 140.0 |
+| Eswatini | 23.0 | 137.0 |
+| Lesotho | 34.0 | 147.0 |
+| Afghanistan | 42.0 | 148.0 |
+| Albania | 16.0 | 95.0 |
+| North Korea | 157.0 | 83.0 |
+| Central African Republic | 18.0 | 92.0 |
+| Nepal | 20.0 | 93.0 |
+
+===== topA
+| country | rankA | rankB |
+|---|---|---|
+| Norway | 1.0 | 21.0 |
+| Sweden | 2.0 | 4.0 |
+| Luxembourg | 3.0 | 61.0 |
+| Switzerland | 4.0 | 15.0 |
+| Canada | 5.0 | 1.0 |
+| Finland | 6.0 | 6.0 |
+| New Zealand | 7.0 | 7.0 |
+| France | 8.0 | 11.0 |
+| Costa Rica | 9.0 | 41.0 |
+| Denmark | 10.0 | 23.0 |
+
+===== topB
+| country | rankA | rankB |
+|---|---|---|
+| Canada | 5.0 | 1.0 |
+| Iceland | 12.0 | 2.0 |
+| Belgium | 14.0 | 3.0 |
+| Sweden | 2.0 | 4.0 |
+| United States | 30.0 | 5.0 |
+| Finland | 6.0 | 6.0 |
+| New Zealand | 7.0 | 7.0 |
+| Netherlands | 44.0 | 8.0 |
+| Spain | 38.0 | 9.0 |
+| South Korea | 51.0 | 10.0 |
+
+===== bonly
+| country | rankB_full |
+|---|---|
+| Faroe Islands | 19.0 |
+| New Caledonia | 30.0 |
+| Greenland | 43.0 |
+| Cook Islands | 55.0 |
+| United States Virgin Islands | 61.0 |
+

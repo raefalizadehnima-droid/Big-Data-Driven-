@@ -1,0 +1,68 @@
+                   coverage_pct  countries_ge80pct_years  missing_pct
+ln_gdp_pc                  75.4                      165         24.6
+ln_energy_pc               96.7                      209          3.3
+ln_elecdem_pc              96.8                      212          3.2
+carbon_int                 96.8                      212          3.2
+coal_sh                    95.2                      208          4.8
+gas_sh                     93.4                      204          6.6
+oil_sh                     96.8                      212          3.2
+nuclear_sh                 93.8                      205          6.2
+hydro_sh                   95.0                      208          5.0
+wind_sh                    92.8                      201          7.2
+solar_sh                   96.4                      210          3.6
+bio_sh                     96.0                      209          4.0
+othren_sh                  96.2                      210          3.8
+netimp_sh                  96.8                      212          3.2
+ln1p_coalprod_pc           99.2                      217          0.8
+ln1p_oilprod_pc            99.2                      217          0.8
+ln1p_gasprod_pc            98.3                      213          1.7
+ln_energy_per_gdp          75.2                      164         24.8
+fossil_sh                  96.8                      212          3.2
+renew_sh                   96.8                      212          3.2
+lowc_sh                    96.8                      212          3.2
+fossil_primary_sh          33.8                       73         66.2
+lowc_primary_sh            36.1                       79         63.9
+elec_div                   90.1                      195          9.9
+import_exp                 96.8                      212          3.2
+                 var  cluster   coverage
+3         carbon_int        1  96.778043
+8           hydro_sh        1  95.027844
+6             oil_sh        2  96.758154
+1       ln_energy_pc        3  96.678600
+2      ln_elecdem_pc        3  96.778043
+0          ln_gdp_pc        3  75.377884
+15   ln1p_gasprod_pc        4  98.269690
+14   ln1p_oilprod_pc        4  99.184566
+5             gas_sh        5  93.396977
+9            wind_sh        6  92.820207
+11            bio_sh        7  95.962609
+10          solar_sh        8  96.420048
+4            coal_sh        9  95.186953
+13  ln1p_coalprod_pc       10  99.184566
+7         nuclear_sh       11  93.754972
+12         netimp_sh       12  96.778043
+[('ln_gdp_pc', 'ln_energy_pc', np.float64(0.94)), ('ln_gdp_pc', 'ln_elecdem_pc', np.float64(0.94)), ('ln_energy_pc', 'ln_elecdem_pc', np.float64(0.95)), ('carbon_int', 'hydro_sh', np.float64(-0.81)), ('gas_sh', 'ln1p_gasprod_pc', np.float64(0.76)), ('ln1p_oilprod_pc', 'ln1p_gasprod_pc', np.float64(0.86))]
+{
+ "rows": 19494,
+ "cols": 130,
+ "entities": 260,
+ "year_min": 1700,
+ "year_max": 2025,
+ "numeric_cols_excl_year": 127,
+ "dup_rows": 0,
+ "dup_keys": 0,
+ "n_noiso_entities": 40,
+ "n_iso_entities": 220,
+ "panel_rows_2000_2022": 5028,
+ "panel_countries": 220,
+ "identity_checks": {
+  "lnEI_minus(lnEpc-lnGDPpc)_maxabs": 1.862842118338648e-07,
+  "lnEI_minus(lnEpc-lnGDPpc)_median_abs": 2.9994997818860725e-08,
+  "fossil+lowcarbon_mean": 99.99999999391214,
+  "fossil+lowcarbon_sd": 3.814380922485037e-06,
+  "fossil_vs_coal+gas+oil_maxabs": 1.609999999541145e-05,
+  "renew_vs_components_maxabs": 1.350000000854834e-05,
+  "source_share_sum_mean": 99.99999998906256,
+  "source_share_sum_sd": 3.5826782423175773e-06
+ }
+}

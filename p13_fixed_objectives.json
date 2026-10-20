@@ -1,0 +1,139 @@
+{
+ "n": 159,
+ "objectives": [
+  "carbon_int",
+  "elec_div",
+  "import_exp",
+  "total_energy_per_capita_kwh",
+  "energy_int"
+ ],
+ "global_pareto_fixed": 60,
+ "ranking_identical_across_representations": true,
+ "objective_set_effect": {
+  "tau_A_obj_vs_fixed": 0.6057638723031606,
+  "tau_B_obj_vs_fixed": 0.8243770400445825,
+  "tau_A_obj_vs_B_obj": 0.5247193694769525,
+  "pareto_A": 19,
+  "pareto_B": 23,
+  "pareto_fixed": 60,
+  "jac_A_vs_fixed": 0.31666666666666665,
+  "jac_B_vs_fixed": 0.38333333333333336,
+  "jac_A_vs_B": 0.3548387096774194
+ },
+ "rules": {
+  "A4_vs_B5": {
+   "same_reference": 0.16352201257861634,
+   "same_reference_excl_self": 0.16556291390728478,
+   "jac_cluster_pareto": 0.6068376068376068,
+   "size_A": 84,
+   "size_B": 104,
+   "tau_feasibility": 0.48938871757663693,
+   "top20_feasible_overlap": 9,
+   "mean_gap_A": 0.17867637345069493,
+   "mean_gap_B": 0.15635304197094102,
+   "corr_gap": 0.7744692890334361,
+   "leaders_A": 4,
+   "leaders_B": 5,
+   "same_reference_ci": [
+    0.1069182389937107,
+    0.22641509433962265
+   ],
+   "jac_ci": [
+    0.5169420903954802,
+    0.6916826923076923
+   ]
+  },
+  "k4": {
+   "same_reference": 0.18867924528301888,
+   "same_reference_excl_self": 0.19078947368421054,
+   "jac_cluster_pareto": 0.6306306306306306,
+   "size_A": 84,
+   "size_B": 97,
+   "tau_feasibility": 0.48938871757663693,
+   "top20_feasible_overlap": 9,
+   "mean_gap_A": 0.17867637345069493,
+   "mean_gap_B": 0.15024006817135493,
+   "corr_gap": 0.7632035985989482,
+   "leaders_A": 4,
+   "leaders_B": 4,
+   "same_reference_ci": [
+    0.1320754716981132,
+    0.2578616352201258
+   ],
+   "jac_ci": [
+    0.5436484892477996,
+    0.7196535320367096
+   ]
+  },
+  "k5": {
+   "same_reference": 0.16981132075471697,
+   "same_reference_excl_self": 0.17333333333333334,
+   "jac_cluster_pareto": 0.5826771653543307,
+   "size_A": 97,
+   "size_B": 104,
+   "tau_feasibility": 0.48938871757663693,
+   "top20_feasible_overlap": 9,
+   "mean_gap_A": 0.15386542313779247,
+   "mean_gap_B": 0.15635304197094102,
+   "corr_gap": 0.6694127917203656,
+   "leaders_A": 5,
+   "leaders_B": 5,
+   "same_reference_ci": [
+    0.11320754716981132,
+    0.23270440251572327
+   ],
+   "jac_ci": [
+    0.5,
+    0.6720032786885246
+   ]
+  },
+  "k6": {
+   "same_reference": 0.1320754716981132,
+   "same_reference_excl_self": 0.13513513513513514,
+   "jac_cluster_pareto": 0.6287878787878788,
+   "size_A": 106,
+   "size_B": 109,
+   "tau_feasibility": 0.48938871757663693,
+   "top20_feasible_overlap": 9,
+   "mean_gap_A": 0.13602338046320595,
+   "mean_gap_B": 0.13230306734960293,
+   "corr_gap": 0.6139441444806533,
+   "leaders_A": 6,
+   "leaders_B": 6,
+   "same_reference_ci": [
+    0.08176100628930817,
+    0.18867924528301888
+   ],
+   "jac_ci": [
+    0.5454360679970436,
+    0.708029197080292
+   ]
+  }
+ },
+ "null": {
+  "A4_vs_B5": {
+   "same_reference_mean": 0.1419916142557652,
+   "same_reference_ci": [
+    0.050314465408805034,
+    0.24528301886792453
+   ],
+   "jac_mean": 0.7427396290031496,
+   "jac_ci": [
+    0.6757945445445446,
+    0.8039988464865904
+   ]
+  },
+  "k5": {
+   "same_reference_mean": 0.13197064989517818,
+   "same_reference_ci": [
+    0.050314465408805034,
+    0.22641509433962265
+   ],
+   "jac_mean": 0.7531696556384908,
+   "jac_ci": [
+    0.6842105263157895,
+    0.8188142843410553
+   ]
+  }
+ }
+}

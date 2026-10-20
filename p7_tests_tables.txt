@@ -1,0 +1,7 @@
+{'A': {'in_sample_ARI': 0.9204900423239014, 'out_of_time_ARI': 0.9677593517947931}, 'B': {'in_sample_ARI': 0.8718828470565771, 'out_of_time_ARI': 0.2773079635752487}}
+                                           test         p_raw        p_holm
+0   H1 Mantel (distance-matrix agreement), 2022  4.997501e-04  1.999000e-03
+1      H1 Procrustes (2-PC configuration), 2022  4.997501e-04  1.999000e-03
+2      H2 ARI vs chance (A4 vs B5), permutation  1.996008e-03  1.999000e-03
+3  H4 cluster stability B vs A, paired Wilcoxon  6.395632e-04  1.999000e-03
+4     H4 rank stability B vs A, paired Wilcoxon  2.890557e-26  1.445278e-25
