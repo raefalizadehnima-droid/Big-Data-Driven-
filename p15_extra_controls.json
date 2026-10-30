@@ -1,0 +1,88 @@
+{
+ "screen_all_years": [
+  "bio_sh",
+  "carbon_int",
+  "coal_sh",
+  "gas_sh",
+  "ln1p_coalprod_pc",
+  "ln1p_oilprod_pc",
+  "ln_energy_pc",
+  "netimp_sh",
+  "nuclear_sh",
+  "oil_sh",
+  "solar_sh",
+  "wind_sh"
+ ],
+ "screen_training_years": [
+  "bio_sh",
+  "carbon_int",
+  "coal_sh",
+  "gas_sh",
+  "ln1p_coalprod_pc",
+  "ln1p_gasprod_pc",
+  "ln_energy_pc",
+  "netimp_sh",
+  "nuclear_sh",
+  "oil_sh",
+  "solar_sh",
+  "wind_sh"
+ ],
+ "screen_identical": false,
+ "screen_coverage_min_train": 75.73221757322176,
+ "B_feats_sorted": [
+  "bio_sh",
+  "carbon_int",
+  "coal_sh",
+  "gas_sh",
+  "ln1p_coalprod_pc",
+  "ln1p_oilprod_pc",
+  "ln_energy_pc",
+  "netimp_sh",
+  "nuclear_sh",
+  "oil_sh",
+  "solar_sh",
+  "wind_sh"
+ ],
+ "B_matches_all_years": true,
+ "clr_rows": 927,
+ "clr_rows_total": 939,
+ "clr": {
+  "0.01": {
+   "npc": 4,
+   "ARI_vs_sqrt_B": 0.3998249967453691,
+   "ARI_vs_A4": 0.1448652646551446,
+   "sil": 0.28957068752662934
+  },
+  "0.1": {
+   "npc": 4,
+   "ARI_vs_sqrt_B": 0.6246537922413615,
+   "ARI_vs_A4": 0.15166234801850967,
+   "sil": 0.2942128392010128
+  },
+  "1.0": {
+   "npc": 4,
+   "ARI_vs_sqrt_B": 0.6756812663414936,
+   "ARI_vs_A4": 0.15513009053850008,
+   "sil": 0.31218967381624396
+  }
+ },
+ "ARI_A4_vs_B_sqrt_same_rows": 0.18528497091529395,
+ "pop_weighted": {
+  "A": {
+   "ARI_weighted_vs_unweighted": 0.6935434504689963,
+   "share_same_cluster_rows": 0.8753993610223643,
+   "share_same_cluster_population": 0.9105904341998118
+  },
+  "B": {
+   "ARI_weighted_vs_unweighted": 0.5080043786148218,
+   "share_same_cluster_rows": 0.6592119275825347,
+   "share_same_cluster_population": 0.6191671998398433
+  },
+  "ARI_A_vs_B_weighted": 0.11775385276218962,
+  "ARI_A_vs_B_unweighted": 0.187474645589551,
+  "same_reference_unweighted": 0.16352201257861634,
+  "same_reference_population_weighted": 0.08141928242318827,
+  "same_reference_with_weighted_clusters": 0.3018867924528302,
+  "n_2022": 159
+ }
+}

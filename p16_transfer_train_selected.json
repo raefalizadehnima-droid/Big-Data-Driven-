@@ -1,0 +1,24 @@
+{
+ "features": [
+  "bio_sh",
+  "carbon_int",
+  "coal_sh",
+  "gas_sh",
+  "ln1p_coalprod_pc",
+  "ln1p_gasprod_pc",
+  "ln_energy_pc",
+  "netimp_sh",
+  "nuclear_sh",
+  "oil_sh",
+  "solar_sh",
+  "wind_sh"
+ ],
+ "n_rows": 938,
+ "n_train": 457,
+ "n_test": 481,
+ "npc": 4,
+ "ARI_vs_test_refit": 0.24337194861653663,
+ "wss_ratio": 1.686864987941755,
+ "sil_transferred": 0.2255206543151939,
+ "sil_refit": 0.29464987328646497
+}
